@@ -67,7 +67,7 @@ function classNames(...classes: any) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function Varaa() {
+export default function Book() {
   return (
     <>
       <Header />

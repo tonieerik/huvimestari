@@ -59,7 +59,7 @@ const seo = {
   description: "Aktiviteetteja yrityksen virkistyshetkiin, elämyksiä tyhy-päivään"
 }
 
-export default function BirthdayParty() {
+export default function CompanyParty() {
   return (
     <Layout {...seo}>
       <div className="bg-white sm:py-8">

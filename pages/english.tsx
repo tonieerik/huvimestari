@@ -48,7 +48,7 @@ const seo = {
   description: "Huvimestari offers experiences for bachelor parties, activities for birthday parties, and something a little different for company day outs."
 }
 
-export default function Example() {
+export default function English() {
   return (
     <Layout {...seo}>
 
