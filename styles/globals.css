@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bg-orange {
+  background-color: #E96D00 !important;
+}
+
+.ring-orange {
+  --tw-ring-color: #E96D00;
+}
+
+.bg-yellow {
+  background-color: rgba(255, 236, 68, 0.9) !important;
+}
+
+.bg-yellow-100 {
+  background-color: rgba(255, 236, 68, 0.9) !important;
+}
+
+.text-orange {
+  color: #E96D00;
+}
+
+.text-yellow {
+  color: rgba(255, 236, 68, 0.9);
+}
+
+.border-orange {
+  color: #E96D00;
+}
+
+.video-responsive {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+}
+
+.video-responsive iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
