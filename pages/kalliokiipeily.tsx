@@ -26,8 +26,9 @@ const product = {
     },
   ],
   description: `
-    <p>Kiipeily luonnonkalliolla on luontoliikkumista parhaimmillaan! Jokaisen sisäkiipeilyä kokeilleen tulisi joskus käydä kokeilemassa lajin uusia ulottuvuuksia luonnon helmassa. Jyvässeudulta löytyy runsaasti harrastusmahdollisuuksia tämänkin lajin parissa vasta-alkajista lähtien.</p>
-    <p>Tähän aktiviteettiin ei tarvitse kuitenkaan kiipeilykokemusta, voimaa tai notkeutta vaan se sopii lähes kenelle tahansa. Kiipeilykokeilut suunnitellaankin aina ryhmäkohtaisesti sopivan helpoiksi tai haastaviksi osallistujien mukaan.</p>
+    <p>Kiipeily aidoilla luonnonkallioilla on ulkoliikuntaa parhaimmillaan! Jos olet testannut joskus sisätiloissa köysikiipeilyä tai boulderointia, suosittelemme ihmeessä kokeilemaan lajin uusia ulottuvuuksia myös luonnon helmassa.</p>
+    <p>Kalliokiipeilykokeiluun et kuitenkaan tarvitse aiempaa kiipeilykokemusta, voimaa tai notkeutta, vaan laji sopii käytännössä kenelle tahansa vasta-alkajista lähtien. Meiltä saat myös kaikki tarvittavat varusteet: kypärän, valjaat ja kiipeilykengät.</p>
+    <p>Suunnittelemme kiipeilykokeilun aina ryhmäkohtaisesti sopivan helpoksi tai haastavaksi osallistujien taustojen mukaan. Jos kiipeilykärpänen puraisee myöhemmin, Jyvässeudulta löytyy runsaasti harrastusmahdollisuuksia lajin parissa.</p>
   `,
   details: [
     {

@@ -26,7 +26,9 @@ const product = {
     },
   ],
   description: `
-    <p>Köysilaskeutuminen Matti Nykäsen mäkihyppytornista on asiakkaidemme kestosuosikki – eikä suotta. Laajavuoren laelle rakennettu 58 metriä korkea torni tarjoaa ympäri Jyväskylän uskomattomat näkymät, joista pääsevät nauttimaan kaikki tilausryhmän jäsenet. Ohjaaja opastaa suoritukseen ja huolehtii turvallisuudestanne. Jokainen laskeutuja määrää itse vauhtinsa.</p>
+    <p>Köysilaskeutuminen Matti Nykäsen legendaarisesta mäkihyppytornista on asiakkaidemme kestosuosikki – eikä suotta. Laajavuoren laelle rakennettu 58 metriä korkea torni tarjoaa ympäri Jyväskylän uskomattomat panoraamanäkymät.</p>
+    <p>Maisemista pääsevät nauttimaan laskeutujan lisäksi kaikki tilausryhmän jäsenet. Vaikka torni on huikaisevan korkea maamerkki, moni korkeanpaikankammoinen on rohkaistunut ylittämään itsensä ohjaajan ja ystäviensä kannustamana.</p>
+    <p>Köysilaskeutumisessa puemme laskeutujalle valjaat, ja hän saa määrätä itse vauhtinsa tornin huipulta maahan saakka. Opastamme aina jokaisen laskeutujan etukäteen suoritukseen ja huolehdimme turvallisuudesta koko laskeutumisen ajan.</p>
   `,
   details: [],
   features: [

@@ -19,16 +19,16 @@ const IndexPage = () => (
       <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
         <div className="text-center">
           <h2 className="text-base font-semibold tracking-wide uppercase mt-1 text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl">
-            Elämyksellinen päivä?
+            Elämyksellistä hupia Jyväskylässä
           </h2>
-          <p className="max-w-xl mt-12 mx-auto text-xl text-gray-500">
-            Haluatko kokea mäkihyppytornin huikeat maisemat köyden varassa tai pudottautua siltakeinun hurjaan kyytiin?
+          <p className="max-w-5xl mt-12 mx-auto text-xl text-gray-500">
+            Miltä tuntuisi kokea mäkihyppytornin huikeat maisemat köysilaskeutuen, pudottautua siltakeinun vauhdikkaaseen kyytiin tai testata omaa kanttiaan kiipeilykalliolla? Köysielämys on takuuvarma valinta, jos kaipaat vauhdikasta ohjelmaa polttareihin, synttäreille tai yrityksen virkistyspäivään.
           </p>
-          <p className="max-w-xl mt-5 mx-auto text-xl text-gray-500">
-            Tarjoamme elämyksiä polttareihin, aktiviteettia synttäreille ja jotain vähän erilaista yrityksen virkistyspäivään.
+          <p className="max-w-5xl mt-5 mx-auto text-xl text-gray-500">
+            Köysilaskeutuminen, siltakeinu, kalliokiipeily ja jääkiipeily ovat Jyväskylän seudulla ainutkertaisia elämyksiä, joita ei ihan joka päivä pääse testaamaan. Osaavan ja kannustavan ammattilaisen ohjauksessa saat kuitenkin ylittää itsesi turvallisesti – huumoria ja rentoa asennetta unohtamatta.
           </p>
-          <p className="max-w-xl mt-5 mx-auto text-xl text-gray-500">
-            Huvimestari tekee päivästäsi erityisen ja ikimuistoisen!
+          <p className="max-w-5xl mt-5 mx-auto text-xl text-gray-500">
+            Mikä köysiaktiviteeteistamme kutsuu juuri sinua? Tai kenet haluaisit yllättää ikimuistoisella elämyksellä? Teemme päivästäsi sellaisen, joka ei hevillä unohdu!
           </p>
         </div>
       </div>

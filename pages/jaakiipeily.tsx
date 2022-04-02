@@ -20,7 +20,9 @@ const product = {
     },
   ],
   description: `
-    <p>Jääkiipeilykokeilu on talviliikkujalle elämys vailla vertaa. Pääset kokeilemaan vuorikiipeilijöidenkin käyttämiä varusteita: jäähakkuja ja -rautoja. Aktiviteetti ei vaadi mitään ennakkotaitoja, ja peruskuntoinen liikkuja pärjää erinomaisesti. Helpoimmat reitit ovat kumpuilevaa ’positiivista’ seinää ja vaikeimmat pystysuoraa jääseinämää. Jokainen löytää itselleen sopivasti haastetta! Jääkiipeilykausi on melko lyhyt ja vaihtelee vuosittain, mutta helmi–maaliskuussa on yleensä poikkeuksetta hyvät jäät.</p>
+    <p>Jääkiipeilykokeilu luonnon jääputouksilla on elämys vailla vertaa. Hitonhaudan komeissa maisemissa pääset kokeilemaan vuorikiipeilijöidenkin käyttämiä jäähakkuja ja -rautoja. Jokainen löytää itselleen varmasti sopivasti haastetta!</p>
+    <p>Aktiviteetti ei vaadi ennakkotaitoja, ja peruskuntoinen liikkuja pärjää erinomaisesti. Helpoimmat reitit ovat kumpuilevaa positiivista seinää ja vaikeimmat pystysuoraa jääseinämää. Meiltä saat myös kaikki jääkiipeilykokeiluun tarvittavat varusteet.</p>
+    <p>Jääkiipeilykausi on Keski-Suomessa melko lyhyt ja vaihtelee vuosittain, mutta helmi–maaliskuussa jäät ovat tyypillisesti parhaimmillaan.</p>
   `,
   details: [
     {

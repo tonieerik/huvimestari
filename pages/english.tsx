@@ -58,7 +58,7 @@ export default function English() {
               <p className="mt-1 text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl">
                 Adventurous day?
               </p>
-              <p className="max-w-xl mt-5 mx-auto text-xl text-gray-500">
+              <p className="max-w-5xl mt-5 mx-auto text-xl text-gray-500">
               Would you like to experience the amazing views from a ski jump tower hanging on a rope, or take a wild ride on a pendulum?
 We offer experiences for bachelor parties, activities for birthday parties, and something a little different for company day outs.
 Huvimestari makes your day special and memorable!

@@ -26,9 +26,11 @@ const product = {
     },
   ],
   description: `
-    <p>Kinakujan siltakeinu on kirkkaasti toiseksi suosituin elämyksemme. Siltakeinu on jättimäinen sillan rakenteisiin viritetty keinu, jonka kyytiin hypätään valjaisiin kiinnitettynä sillan kaiteelta. Pienehkö silta yllättää positiivisesti antaen kunnon adrenaliinipiikin! Parhaiten siltakeinun idean ymmärrät videosta.</p>
-    <p>Kinakujan silta on sijainniltaan erinomainen: muutaman sadan metrin päässä keskustan ytimestä, mutta myös autoille löytyy tarvittaessa helposti vierestä parkki. Esimerkiksi benjihyppyyn verrattuna siltakeinun hurja kyyti on hyvin pehmeä, mitä monet asiakkaat ovat kiitelleet.</p>
+    <p>Siltakeinu on jättimäinen sillan rakenteisiin viritetty keinu, jonka kyytiin hypätään valjaisiin puettuna sillan laidalta. Kinakujan siltakeinu on kirkkaasti toiseksi suosituin elämyksemme. Pieneltä näyttävä silta yllättää positiivisesti ja antaa kunnon adrenaliinipiikin! </p>
+    <p>Esimerkiksi benjihyppyyn verrattuna siltakeinun vauhdikas kyyti on verrattain pehmeä, mitä monet asiakkaamme ovat kiitelleet. Hetkellinen vapaapudotus ottaa kuitenkin taatusti mahanpohjasta ja saa hetkellisen hirvityksen tunteen laukeamaan nauruna.</p>
+    <p>Kinakujan silta sijaitsee muutaman sadan metrin päässä Jyväskylän keskustan ytimestä.</p>
   `,
+  // <p>Parhaiten siltakeinun idean ymmärrät videosta.</p>
   details: [
     {
       name: 'Lisätiedot',
