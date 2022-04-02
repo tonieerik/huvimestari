@@ -1,8 +1,7 @@
 /* This example requires Tailwind CSS v2.0+ */
 import { Disclosure } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/outline'
-import Footer from '../components/Footer'
-import Header from '../components/Header'
+import Layout from '../components/Layout'
 
 const faqs = [
   {
@@ -57,14 +56,18 @@ const faqs = [
   }
 ]
 
+const seo = {
+  title: "Usein kysytyt kysymykset | Huvimestari",
+  description: "Katso vastaukset useimmiten kysyttyihin kysymyksiimme ja karista pelkosi! Toimintamme on turvallista ja ohjaajamme ovat koulutettuja."
+}
+
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ')
 }
 
 export default function Faq() {
   return (
-    <>
-      <Header />
+    <Layout {...seo}>
       <div className="bg-gray-50">
         <div className="max-w-7xl mx-auto py-12 px-4 sm:py-16 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto divide-y-2 divide-gray-200">
@@ -104,7 +107,6 @@ export default function Faq() {
           </div>
         </div>
       </div>
-      <Footer />
-    </>
+    </Layout>
   )
 }
