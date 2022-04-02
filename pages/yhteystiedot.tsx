@@ -1,8 +1,45 @@
 import { MailIcon, PhoneIcon } from '@heroicons/react/outline'
+import { useState } from 'react'
+import PulseLoader from "react-spinners/PulseLoader";
 import Footer from '../components/Footer'
 import Header from '../components/Header'
 
-export default function Example() {
+export default function ContactInfo() {
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [phone, setPhone] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [sent, setSent] = useState(false);
+
+  const clearForm = () => {
+    setEmail('')
+    setPhone('')
+    setMessage('')
+    setLoading(false)
+    setSent(false)
+  }
+
+  const handleSubmit = () => {
+    setLoading(true)
+
+    fetch('/api/email', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        type: 'contact',
+        content: { email, message, phone }
+      })
+    }).then((response: any) => {
+      if (response.status === 200) {
+        setSent(true)
+        setLoading(false)
+        setTimeout(clearForm, 4000)
+      }
+    })
+  }
+
   return (
     <>
       <Header />
@@ -40,7 +77,7 @@ export default function Example() {
             </div>
             <div className="bg-white py-16 px-4 sm:px-6 lg:col-span-3 lg:py-24 lg:px-8 xl:pl-12">
               <div className="max-w-lg mx-auto lg:max-w-none">
-                <form action="#" method="POST" className="grid grid-cols-1 gap-y-6">
+                <form className="grid grid-cols-1 gap-y-6">
                   <div>
                     <label htmlFor="email" className="sr-only">
                       Sähköpostiosoite
@@ -50,8 +87,11 @@ export default function Example() {
                       name="email"
                       type="email"
                       autoComplete="email"
-                      className="block w-full shadow-sm py-3 px-4 placeholder-gray-500 border-gray-300 rounded-md"
+                      className={"block w-full shadow-sm py-3 px-4 placeholder-gray-500 border-gray-300 rounded-md "  + (loading || sent ? "text-gray-400" : "text-gray-800")}
                       placeholder="Sähköpostiosoite"
+                      value={email}
+                      onChange={e => setEmail(e.target.value)}
+                      disabled={loading || sent}
                     />
                   </div>
                   <div>
@@ -63,8 +103,11 @@ export default function Example() {
                       name="phone"
                       id="phone"
                       autoComplete="tel"
-                      className="block w-full shadow-sm py-3 px-4 placeholder-gray-500 border-gray-300 rounded-md"
+                      className={"block w-full shadow-sm py-3 px-4 placeholder-gray-500 border-gray-300 rounded-md "  + (loading || sent ? "text-gray-400" : "text-gray-800")}
                       placeholder="Puhelinnumero"
+                      value={phone}
+                      onChange={e => setPhone(e.target.value)}
+                      disabled={loading || sent}
                     />
                   </div>
                   <div>
@@ -75,17 +118,23 @@ export default function Example() {
                       id="message"
                       name="message"
                       rows={4}
-                      className="block w-full shadow-sm py-3 px-4 placeholder-gray-500 border border-gray-300 rounded-md"
+                      className={"block w-full shadow-sm py-3 px-4 placeholder-gray-500 border border-gray-300 rounded-md "  + (loading || sent ? "text-gray-400" : "text-gray-800")}
                       placeholder="Viesti"
-                      defaultValue={''}
+                      value={message}
+                      onChange={e => setMessage(e.target.value)}
+                      disabled={loading || sent}
                     />
                   </div>
                   <div>
                     <button
-                      type="submit"
-                      className="inline-flex justify-center py-3 px-6 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-orange"
+                      type="button"
+                      className={"inline-flex justify-center py-3 px-6 border border-transparent shadow-sm text-base font-medium rounded-md text-white " + (sent ? "bg-green" : "bg-orange")}
+                      onClick={handleSubmit}
+                      disabled={loading || sent}
                     >
-                      Lähetä viesti
+                      { sent ? "Viesti lähetetty" : loading ? "Lähetetään " : "Lähetä viesti" }
+                      {" "}
+                      <PulseLoader loading={loading} color="white" size="5" />
                     </button>
                   </div>
                 </form>

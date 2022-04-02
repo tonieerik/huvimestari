@@ -1,3 +1,6 @@
+import { useState } from 'react'
+import PulseLoader from "react-spinners/PulseLoader";
+
 const navigation = {
   contacts: [
     {
@@ -47,6 +50,36 @@ const navigation = {
 }
 
 export default function Footer() {
+  const [email, setEmail] = useState('')
+  const [loading, setLoading] = useState(false);
+  const [sent, setSent] = useState(false);
+
+  const clearForm = () => {
+    setEmail('')
+    setLoading(false)
+    setSent(false)
+  }
+
+  const handleSubmit = () => {
+    setLoading(true)
+
+    fetch('/api/email', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        type: 'newsletter',
+        content: { email }
+      })
+    }).then((response: any) => {
+      if (response.status === 200) {
+        setSent(true)
+        setLoading(false)
+        setTimeout(clearForm, 4000)
+      }
+    })
+  }
   return (
     <footer className="bg-yellow" aria-labelledby="footer-heading">
       <h2 id="footer-heading" className="sr-only">
@@ -92,24 +125,31 @@ export default function Footer() {
               Liity sähköpostilistallemme
             </h3>
             <form className="mt-4 sm:flex sm:max-w-md">
-              <label htmlFor="email-address" className="sr-only">
+              <label htmlFor="email" className="sr-only">
                 Sähköpostiosoite
               </label>
               <input
                 type="email"
-                name="email-address"
-                id="email-address"
+                name="email"
+                id="email"
                 autoComplete="email"
                 required
-                className="appearance-none min-w-0 w-full bg-white border border-gray-300 rounded-md shadow-sm py-2 px-4 text-base text-gray-900 placeholder-gray-500 focus:placeholder-gray-400"
+                className={"appearance-none min-w-0 w-full bg-white border border-gray-300 rounded-md shadow-sm py-2 px-4 text-base placeholder-gray-500 focus:placeholder-gray-400 "  + (loading || sent ? "text-gray-400" : "text-gray-800")}
                 placeholder="Sähköpostiosoitteesi"
+                value={email}
+                onChange={e => setEmail(e.target.value)}
+                disabled={loading || sent}
               />
               <div className="mt-3 rounded-md sm:mt-0 sm:ml-3 sm:flex-shrink-0">
                 <button
-                  type="submit"
-                  className="w-full bg-orange flex items-center justify-center border border-transparent rounded-md py-2 px-4 text-base font-medium text-white hover:bg-orange"
+                  type="button"
+                  className={"w-full flex items-center justify-center border border-transparent rounded-md py-2 px-4 text-base font-medium text-white " + (sent ? "bg-green" : "hover:bg-orange bg-orange")}
+                  onClick={handleSubmit}
+                  disabled={loading || sent}
                 >
-                  LIITY
+                  { sent ? "LIITYTTY" : loading ? "LIITYTÄÄN " : "LIITY" }
+                  {" "}
+                  <PulseLoader loading={loading} color="white" size="5" />
                 </button>
               </div>
             </form>
