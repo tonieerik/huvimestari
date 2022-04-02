@@ -52,17 +52,20 @@ export default ({product, title, description}: {product: Product, title: string,
 
             <div className="my-10 flex sm:flex-col1">
               <button
+                onClick={() => {
+                  window.location.href = "/varaa";
+                }}
                 type="submit"
                 className="mx-2 max-w-xs flex-1 bg-orange border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:text-black focus:outline-none sm:w-full"
               >
                 Varaa aikasi
               </button>
-              <button
+              {/* <button
                 type="submit"
                 className="mx-2 max-w-xs flex-1 bg-orange border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:text-black focus:outline-none sm:w-full"
               >
                 Tilaa lahjakortti
-              </button>
+              </button> */}
             </div>
             
             <Tab.Group as="div" className="flex flex-col-reverse">

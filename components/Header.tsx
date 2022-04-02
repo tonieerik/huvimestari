@@ -39,7 +39,7 @@ const services = [
 ]
 const callsToAction = [
   { name: 'Varaa aika', href: '/varaa', icon: CalendarIcon },
-  { name: 'Tilaa lahjakortti', href: '/lahjakortti', icon: GiftIcon },
+  // { name: 'Tilaa lahjakortti', href: '/lahjakortti', icon: GiftIcon },
 ]
 
 function classNames(...classes: string[]) {
