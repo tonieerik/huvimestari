@@ -17,19 +17,19 @@ const products = [
   },
   {
     id: 3,
-    name: 'Jääkiipeily',
-    href: '/jaakiipeily',
+    name: 'Kalliokiipeily',
+    href: '/kalliokiipeily',
     intro: 'Kalliokiipeily on mainio laji, jossa voit haastaa omia rajojasi luonnon helmassa kalliota halaillen. Köysikiipeily sopii jokaiselle ihan aloittelijoista alkaen.',
-    imageSrc: 'https://huvimestari.fi/img/jaakiipeily_small.jpg',
-    imageAlt: 'Jääkiipeily luonnon jääputouksilla',
+    imageSrc: 'https://huvimestari.fi/img/kalliokiipeily_small.jpg',
+    imageAlt: 'Kalliokiipeily luonnon kalliolla',
   },
   {
     id: 4,
-    name: 'Kalliokiipeily',
-    href: '/kalliokiipeily',
+    name: 'Jääkiipeily',
+    href: '/jaakiipeily',
     intro: 'Jääkiipeily on harvinaista herkkua Keski-Suomen leveyksillä. Aidoilla luonnon jääputouksilla saat kokeilla, miltä tuntuu kiivetä jääraudoilla ja -hakuilla.',
-    imageSrc: 'https://huvimestari.fi/img/kalliokiipeily_small.jpg',
-    imageAlt: 'Kalliokiipeily luonnon kalliolla',
+    imageSrc: 'https://huvimestari.fi/img/jaakiipeily_small.jpg',
+    imageAlt: 'Jääkiipeily luonnon jääputouksilla',
   },
 ]
 

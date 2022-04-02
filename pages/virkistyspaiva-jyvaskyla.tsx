@@ -8,9 +8,9 @@ import imagePendulum from '../images/siltakeinu_action.jpg'
 import imageRockClimbing from '../images/kalliokiipeily_action.jpg'
 
 const features = [
-  'Uniikkia kokemusta työntekijä muistelee varmasti vielä vuosikymmenten päästä kiikkustuolissa keinuen.',
+  'Uniikkia kokemusta työyhteisö voi muistella porukalla vielä vuosienkin päästä.',
   'Halutessaan koko työporukka pääsee testaamaan kanttiaan köysielämysten parissa. Sivusta seuraaminenkin on joillekin riittävän jännittävää. Yhteisiä kokemuksia on mukava fiilistellä jälkikäteen.',
-  'Jokainen elämykseen osallistunut saa muistoksi GoPro -videon, jonka voi jakaa halutessaan vaikka hääjuhlassa.',
+  'Jokainen elämykseen osallistunut saa muistoksi GoPro-videon.',
   'Köysiaktiviteetteja toteutamme eri puolilla Jyväskylää ja Keski-Suomea. Niinpä voit valita ryhmällesi otollisimman sijainnin.',
   'Järjestämme kaikki aktiviteettimme pienryhmissä, väljästi ulkoilmassa ja maskisuositusta noudattaen, joten elämys on turvallinen vaihtoehto näinä aikoina.',
 ]
@@ -20,7 +20,7 @@ const services = [
     title: 'Köysilaskeutuminen',
     price: '150 €',
     description:
-      'Köysilaskeutuminen legendaarisesta Matti Nykäsen mäkihyppytornista on yritysasiakkaidemme kestosuosikki – eikä suotta. Laajavuoren nyppylällä seisova 58 metriä korkea torni tarjoaa ympäri Jyväskylän uskomattomat näkymät, joista pääsevät nauttimaan koko työporukka. Jokainen osallistuja määrää itse vauhtinsa, joten Jyväskylän komeista maisemista voi nautiskella oman mielensä mukaan.',
+      'Köysilaskeutuminen legendaarisesta Matti Nykäsen mäkihyppytornista on yritysasiakkaidemme kestosuosikki – eikä suotta. Laajavuoren nyppylällä seisova 58 metriä korkea torni tarjoaa ympäri Jyväskylän uskomattomat näkymät, joista koko työporukka saa nauttia. Jokainen osallistuja määrää itse vauhtinsa, joten Jyväskylän komeista maisemista voi nautiskella oman mielensä mukaan.',
     imageSrc: imageRappelling,
     imageAlt: 'Köysilaskeutuminen mäkihyppytornista',
     actionButtonText: 'VARAA AIKA YRITYSRYHMÄLLE!',
@@ -32,7 +32,7 @@ const services = [
     title: 'Siltakeinu',
     price: '100 €',
     description:
-      'Vauhdikas siltakeinu Kinakujan sillalta on kirkkaasti toiseksi suosituin virkistyspäiväelämyksemme. Siltakeinu on jättimäinen sillan rakenteisiin viritetty keinu, jonka kyytiin hypätään valjaisiin kiinnitettynä sillan laidalta. Siltakeinu saa taatusti adrenaliinin virtaamaan synttärisankarin suonissa. Sillan sijainti on virkistyspäivän aktiviteetteja ajatellen erinomainen: muutaman sadan metrin päässä Jyväskylän keskustasta.',
+      'Vauhdikas siltakeinu Kinakujan sillalta on kirkkaasti toiseksi suosituin virkistyspäiväelämyksemme. Siltakeinu on jättimäinen sillan rakenteisiin viritetty keinu, jonka kyytiin hypätään valjaisiin kiinnitettynä sillan laidalta. Siltakeinu saa taatusti adrenaliinin virtaamaan suonissa. Sillan sijainti on virkistyspäivän aktiviteetteja ajatellen erinomainen: muutaman sadan metrin päässä Jyväskylän keskustasta.',
     imageSrc: imagePendulum,
     imageAlt: 'Siltakeinu Kinakujan sillalla',
     actionButtonText: 'VARAA AIKA YRITYSRYHMÄLLE!',
