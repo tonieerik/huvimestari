@@ -16,9 +16,9 @@ const IndexPage = () => (
        />
      </video>
      <div className="bg-white">
-      <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto py-10 px-4 sm:py-24 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h2 className="text-base font-semibold tracking-wide uppercase mt-1 text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl">
+          <h2 className="text-2xl font-semibold tracking-wide uppercase mt-1 font-extrabold text-orange sm:text-5xl sm:tracking-tight lg:text-6xl">
             Elämyksellistä hupia Jyväskylässä
           </h2>
           <p className="max-w-5xl mt-12 mx-auto text-xl text-gray-500">

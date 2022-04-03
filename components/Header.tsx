@@ -167,7 +167,7 @@ export default function Header() {
                 <div>
                   <img
                     className="h-16 w-auto"
-                    src="https://huvimestari.fi/img/huvimestari-elamyspalvelut.png"
+                    src="/img/huvimestari-elamyspalvelut.png"
                     alt="Huvimestari"
                   />
                 </div>

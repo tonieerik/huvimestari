@@ -53,10 +53,10 @@ export default function English() {
     <Layout {...seo}>
 
         <div className="bg-white">
-          <div className="max-w-7xl mx-auto py-16 px-4 sm:py-16 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto py-12 px-4 sm:py-16 sm:px-6 lg:px-8">
             <div className="text-center">
-              <p className="mt-1 text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl">
-                Adventurous day?
+              <p className="mt-1 text-2xl font-extrabold text-orange sm:text-5xl sm:tracking-tight lg:text-6xl">
+                ADVENTUROUS DAY?
               </p>
               <p className="max-w-5xl mt-5 mx-auto text-xl text-gray-500">
               Would you like to experience the amazing views from a ski jump tower hanging on a rope, or take a wild ride on a pendulum?
@@ -67,22 +67,21 @@ Huvimestari makes your day special and memorable!
           </div>
         </div>
 
-        <div className="bg-white py-8">
+        <div className="bg-white sm:py-8">
           {services.map(service =>
-            <div className="mx-auto py-2 px-4 sm:py-2 sm:px-6 lg:max-w-7xl lg:px-8" key={service.title}>
-              {/* Product */}
+            <div className="mx-auto pt-2 pb-20 px-4 sm:py-2 sm:px-6 lg:max-w-7xl lg:px-8" key={service.title}>
+
               <div className="lg:grid lg:grid-rows-1 lg:grid-cols-7 lg:gap-x-8 lg:gap-y-10 xl:gap-x-16">
-                {/* Product image */}
+
                 <div className="lg:row-end-1 lg:col-span-4">
                   <div className="aspect-w-4 aspect-h-3 rounded-lg bg-gray-100 overflow-hidden">
                     <img src={service.imageSrc} alt={service.imageAlt} className="object-center object-cover" />
                   </div>
                 </div>
 
-                {/* Product details */}
-                <div className="max-w-2xl mx-auto mt-14 sm:mt-16 lg:max-w-none lg:mt-0 lg:row-end-2 lg:row-span-2 lg:col-span-3">
+                <div className="max-w-2xl mx-auto mt-6 sm:mt-16 lg:max-w-none lg:mt-0 lg:row-end-2 lg:row-span-2 lg:col-span-3">
                   <div className="flex flex-col-reverse">
-                    <div className="mt-4">
+                    <div className="sm:mt-4">
                       <h1 className="text-2xl font-extrabold tracking-tight text-gray-900 sm:text-3xl">{service.title}</h1>
                     </div>
 

@@ -50,7 +50,7 @@ export default function Services() {
                 />
               </div>
               <h3 className="mt-4 text-2xl text-orange">{product.name}</h3>
-              <p className="mt-1 text-sm font-medium text-gray-700">{product.intro}</p>
+              <p className="mt-1 text-base font-medium text-gray-700">{product.intro}</p>
             </a>
           ))}
         </div>
