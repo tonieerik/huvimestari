@@ -4,8 +4,6 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
 
 <url>
   <loc>https://huvimestari.fi/</loc>
@@ -28,6 +26,26 @@
   <priority>1.00</priority>
 </url>
 <url>
+  <loc>https://huvimestari.fi/koysilaskeutuminen</loc>
+  <lastmod>2022-04-04T07:14:46+00:00</lastmod>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://huvimestari.fi/siltakeinu</loc>
+  <lastmod>2022-04-04T07:14:46+00:00</lastmod>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://huvimestari.fi/kalliokiipeily</loc>
+  <lastmod>2022-04-04T07:14:46+00:00</lastmod>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://huvimestari.fi/jaakiipeily</loc>
+  <lastmod>2022-04-04T07:14:46+00:00</lastmod>
+  <priority>0.90</priority>
+</url>
+<url>
   <loc>https://huvimestari.fi/varaa</loc>
   <lastmod>2022-04-04T07:14:46+00:00</lastmod>
   <priority>0.80</priority>
@@ -44,26 +62,6 @@
 </url>
 <url>
   <loc>https://huvimestari.fi/english</loc>
-  <lastmod>2022-04-04T07:14:46+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://huvimestari.fi/koysilaskeutuminen</loc>
-  <lastmod>2022-04-04T07:14:46+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://huvimestari.fi/siltakeinu</loc>
-  <lastmod>2022-04-04T07:14:46+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://huvimestari.fi/kalliokiipeily</loc>
-  <lastmod>2022-04-04T07:14:46+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://huvimestari.fi/jaakiipeily</loc>
   <lastmod>2022-04-04T07:14:46+00:00</lastmod>
   <priority>0.80</priority>
 </url>
