@@ -105,15 +105,15 @@ const BookingForm = ({
           action: "purchase",
           params: {
             currency: "EUR",
-            tax: price/100 * 0.24,
+            tax: price * 0.24,
             transaction_id: "T_" + dayjs().unix(),
-            value: price/100,
+            value: price,
             items: [
               {
                 id: activity === ACTIVITY_RAPPELLING ? "KL" : "SK",
                 name: activity === ACTIVITY_RAPPELLING ? "Köysilaskeutuminen" : "Siltakeinu",
                 quantity: 1,
-                price: price/100
+                price
               }
             ]
           }
