@@ -1,7 +1,7 @@
 /* This example requires Tailwind CSS v2.0+ */
-import { Disclosure } from '@headlessui/react'
-import { ChevronDownIcon } from '@heroicons/react/outline'
-import Layout from '../components/Layout'
+import { Disclosure } from "@headlessui/react";
+import { ChevronDownIcon } from "@heroicons/react/outline";
+import Layout from "../components/Layout";
 
 const faqs = [
   {
@@ -58,16 +58,17 @@ const faqs = [
     question: "Miten ohjaajanne ovat kouluttautuneet?",
     answer:
       "Kaikki köysiturvallisuudesta vastaavat ohjaajamme ovat Suomen Kiipeilyliiton kouluttamia köysitoiminnan ohjaajia, kiipeilyohjaajia tai jääkiipeilyohjaajia. Lisäksi ohjaajamme ovat ensiaputaitoisia (EA2). Olet siis aina turvallisissa käsissä aktiviteeteissamme.",
-  }
-]
+  },
+];
 
 const seo = {
   title: "Usein kysytyt kysymykset | Huvimestari",
-  description: "Katso vastaukset useimmiten kysyttyihin kysymyksiimme ja karista pelkosi! Toimintamme on turvallista ja ohjaajamme ovat koulutettuja."
-}
+  description:
+    "Katso vastaukset useimmiten kysyttyihin kysymyksiimme ja karista pelkosi! Toimintamme on turvallista ja ohjaajamme ovat koulutettuja.",
+};
 
 function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(" ");
 }
 
 export default function Faq() {
@@ -76,14 +77,20 @@ export default function Faq() {
       <div className="bg-gray-50">
         <div className="max-w-7xl mx-auto py-12 px-4 sm:py-16 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto divide-y-2 divide-gray-200">
-            <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">Usein kysytyt kysymykset</h2>
-            <div style={{border: 'none'}}>
+            <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
+              Usein kysytyt kysymykset
+            </h2>
+            <div style={{ border: "none" }}>
               <br />
-              Köysiaktiviteettimme herättävät joskus paljon kysymyksiä etukäteen. Olemme koonneet alle muutamia useimmin toistuvia kysymyksiä vastauksineen.
+              Köysiaktiviteettimme herättävät joskus paljon kysymyksiä
+              etukäteen. Olemme koonneet alle muutamia useimmin toistuvia
+              kysymyksiä vastauksineen.
               <br />
               <br />
-              Haluamme tarjota aina jokaiselle mahdollisimman turvallisen elämyksen. Jos jokin vielä mietityttää, laita viestiä tai soita!
-              <br /><br />
+              Haluamme tarjota aina jokaiselle mahdollisimman turvallisen
+              elämyksen. Jos jokin vielä mietityttää, laita viestiä tai soita!
+              <br />
+              <br />
             </div>
             <dl className="mt-6 space-y-6 divide-y divide-gray-200">
               {faqs.map((faq) => (
@@ -92,10 +99,15 @@ export default function Faq() {
                     <>
                       <dt className="text-lg">
                         <Disclosure.Button className="text-left w-full flex justify-between items-start text-gray-400">
-                          <span className="font-medium text-orange">{faq.question}</span>
+                          <span className="font-medium text-orange">
+                            {faq.question}
+                          </span>
                           <span className="ml-6 h-7 flex items-center">
                             <ChevronDownIcon
-                              className={classNames(open ? '-rotate-180' : 'rotate-0', 'h-6 w-6 transform')}
+                              className={classNames(
+                                open ? "-rotate-180" : "rotate-0",
+                                "h-6 w-6 transform"
+                              )}
                               aria-hidden="true"
                             />
                           </span>
@@ -113,5 +125,5 @@ export default function Faq() {
         </div>
       </div>
     </Layout>
-  )
+  );
 }

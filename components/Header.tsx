@@ -1,49 +1,49 @@
-import { Fragment } from 'react'
-import { Popover, Transition } from '@headlessui/react'
+import { Fragment } from "react";
+import { Popover, Transition } from "@headlessui/react";
 import {
   CalendarIcon,
   GiftIcon,
   MenuIcon,
   SparklesIcon,
   XIcon,
-} from '@heroicons/react/outline'
-import { ChevronDownIcon } from '@heroicons/react/solid'
-import Image from 'next/image'
-import imageLogo from '../images/huvimestari-elamyspalvelut.png'
+} from "@heroicons/react/outline";
+import { ChevronDownIcon } from "@heroicons/react/solid";
+import Image from "next/image";
+import imageLogo from "../images/huvimestari-elamyspalvelut.png";
 
 const services = [
   {
-    name: 'Köysilaskeutuminen',
-    description: 'Matti Nykäsen mäkihyppytornista Laajavuoressa',
-    href: '/koysilaskeutuminen',
+    name: "Köysilaskeutuminen",
+    description: "Matti Nykäsen mäkihyppytornista Laajavuoressa",
+    href: "/koysilaskeutuminen",
     icon: SparklesIcon,
   },
   {
-    name: 'Siltakeinu',
-    description: 'Kinakujan sillalta keskustan kupeessa',
-    href: '/siltakeinu',
+    name: "Siltakeinu",
+    description: "Kinakujan sillalta keskustan kupeessa",
+    href: "/siltakeinu",
     icon: SparklesIcon,
   },
   {
-    name: 'Kalliokiipeily',
+    name: "Kalliokiipeily",
     description: "Luonnon kallioilla",
-    href: '/kalliokiipeily',
+    href: "/kalliokiipeily",
     icon: SparklesIcon,
   },
   {
-    name: 'Jääkiipeily',
+    name: "Jääkiipeily",
     description: "Luonnon jääputouksilla",
-    href: '/jaakiipeily',
+    href: "/jaakiipeily",
     icon: SparklesIcon,
   },
-]
+];
 const callsToAction = [
-  { name: 'Varaa aika', href: '/varaa', icon: CalendarIcon },
+  { name: "Varaa aika", href: "/varaa", icon: CalendarIcon },
   // { name: 'Tilaa lahjakortti', href: '/lahjakortti', icon: GiftIcon },
-]
+];
 
 function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(" ");
 }
 
 export default function Header() {
@@ -74,15 +74,15 @@ export default function Header() {
                 <>
                   <Popover.Button
                     className={classNames(
-                      open ? 'text-orange' : 'text-gray-700',
-                      'group bg-yellow rounded-md inline-flex items-center text-base font-medium hover:text-orange focus:outline-none'
+                      open ? "text-orange" : "text-gray-700",
+                      "group bg-yellow rounded-md inline-flex items-center text-base font-medium hover:text-orange focus:outline-none"
                     )}
                   >
                     <span>Elämykset</span>
                     <ChevronDownIcon
                       className={classNames(
-                        open ? 'text-orange' : 'text-gray-700',
-                        'ml-2 h-5 w-5 group-hover:text-orange'
+                        open ? "text-orange" : "text-gray-700",
+                        "ml-2 h-5 w-5 group-hover:text-orange"
                       )}
                       aria-hidden="true"
                     />
@@ -106,10 +106,17 @@ export default function Header() {
                               href={item.href}
                               className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50"
                             >
-                              <item.icon className="flex-shrink-0 h-6 w-6 text-gray-300" aria-hidden="true" />
+                              <item.icon
+                                className="flex-shrink-0 h-6 w-6 text-gray-300"
+                                aria-hidden="true"
+                              />
                               <div className="ml-4">
-                                <p className="text-base font-medium text-orange">{item.name}</p>
-                                <p className="mt-1 text-sm text-gray-500">{item.description}</p>
+                                <p className="text-base font-medium text-orange">
+                                  {item.name}
+                                </p>
+                                <p className="mt-1 text-sm text-gray-500">
+                                  {item.description}
+                                </p>
                               </div>
                             </a>
                           ))}
@@ -121,7 +128,10 @@ export default function Header() {
                                 href={item.href}
                                 className="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-100 hover:text-gray-800"
                               >
-                                <item.icon className="flex-shrink-0 h-6 w-6" aria-hidden="true" />
+                                <item.icon
+                                  className="flex-shrink-0 h-6 w-6"
+                                  aria-hidden="true"
+                                />
                                 <span className="ml-3">{item.name}</span>
                               </a>
                             </div>
@@ -134,19 +144,30 @@ export default function Header() {
               )}
             </Popover>
 
-            <a href="/varaa" className="text-base font-medium text-gray-700 hover:text-orange">
+            <a
+              href="/varaa"
+              className="text-base font-medium text-gray-700 hover:text-orange"
+            >
               Varauskalenteri
             </a>
-            <a href="/ukk" className="text-base font-medium text-gray-700 hover:text-orange">
+            <a
+              href="/ukk"
+              className="text-base font-medium text-gray-700 hover:text-orange"
+            >
               UKK
             </a>
-            <a href="/yhteystiedot" className="text-base font-medium text-gray-700 hover:text-orange">
+            <a
+              href="/yhteystiedot"
+              className="text-base font-medium text-gray-700 hover:text-orange"
+            >
               Ota yhteyttä
             </a>
-            <a href="/english" className="text-base font-medium text-gray-700 hover:text-orange">
+            <a
+              href="/english"
+              className="text-base font-medium text-gray-700 hover:text-orange"
+            >
               In English
             </a>
-
           </Popover.Group>
         </div>
       </div>
@@ -160,7 +181,10 @@ export default function Header() {
         leaveFrom="opacity-100 scale-100"
         leaveTo="opacity-0 scale-95"
       >
-        <Popover.Panel focus className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
+        <Popover.Panel
+          focus
+          className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden"
+        >
           <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
             <div className="pt-5 pb-6 px-5">
               <div className="flex items-center justify-between">
@@ -186,8 +210,13 @@ export default function Header() {
                       href={item.href}
                       className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
                     >
-                      <item.icon className="flex-shrink-0 h-6 w-6 text-gray-200" aria-hidden="true" />
-                      <span className="ml-3 text-base font-medium text-gray-900">{item.name}</span>
+                      <item.icon
+                        className="flex-shrink-0 h-6 w-6 text-gray-200"
+                        aria-hidden="true"
+                      />
+                      <span className="ml-3 text-base font-medium text-gray-900">
+                        {item.name}
+                      </span>
                     </a>
                   ))}
                 </nav>
@@ -195,16 +224,28 @@ export default function Header() {
             </div>
             <div className="py-6 px-5 space-y-6">
               <div className="grid grid-cols-2 gap-y-4 gap-x-8">
-                <a href="/varaa" className="text-base font-medium text-orange hover:text-orange">
+                <a
+                  href="/varaa"
+                  className="text-base font-medium text-orange hover:text-orange"
+                >
                   Varauskalenteri
                 </a>
-                <a href="/ukk" className="text-base font-medium text-orange hover:text-orange">
+                <a
+                  href="/ukk"
+                  className="text-base font-medium text-orange hover:text-orange"
+                >
                   UKK
                 </a>
-                <a href="/yhteystiedot" className="text-base font-medium text-orange hover:text-orange">
+                <a
+                  href="/yhteystiedot"
+                  className="text-base font-medium text-orange hover:text-orange"
+                >
                   Ota yhteyttä
                 </a>
-                <a href="/english" className="text-base font-medium text-orange hover:text-orange">
+                <a
+                  href="/english"
+                  className="text-base font-medium text-orange hover:text-orange"
+                >
                   In English
                 </a>
               </div>
@@ -213,5 +254,5 @@ export default function Header() {
         </Popover.Panel>
       </Transition>
     </Popover>
-  )
+  );
 }

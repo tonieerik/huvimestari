@@ -1,40 +1,50 @@
-import { Disclosure, Tab } from '@headlessui/react'
-import { MinusSmIcon, PlusSmIcon } from '@heroicons/react/outline'
-import Layout from '../components/Layout'
+import { Disclosure, Tab } from "@headlessui/react";
+import { MinusSmIcon, PlusSmIcon } from "@heroicons/react/outline";
+import Layout from "../components/Layout";
 
 interface Image {
-  id: number,
-  name: string,
-  src: string,
-  alt: string,
+  id: number;
+  name: string;
+  src: string;
+  alt: string;
 }
 
 interface Feature {
-  name: string,
-  description: string,
-  icon: any
+  name: string;
+  description: string;
+  icon: any;
 }
 
 interface Product {
-  name: string,
-  price: string,
-  heroImage: string,
-  images: Image[],
-  description: string,
-  details: any[],
-  features: Feature[]
+  name: string;
+  price: string;
+  heroImage: string;
+  images: Image[];
+  description: string;
+  details: any[];
+  features: Feature[];
 }
 
-const classNames = (...classes: string[]) => classes.join(' ')
+const classNames = (...classes: string[]) => classes.join(" ");
 
-export default ({product, title, description}: {product: Product, title: string, description: string}) =>
+export default ({
+  product,
+  title,
+  description,
+}: {
+  product: Product;
+  title: string;
+  description: string;
+}) => (
   <Layout title={title} description={description}>
     <img className="w-full" src={product.heroImage} />
     <div className="bg-white">
       <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
         <div className="lg:grid lg:grid-cols-2 lg:gap-x-8 lg:items-start">
           <div>
-            <h1 className="text-3xl font-extrabold tracking-tight text-gray-900">{product.name}</h1>
+            <h1 className="text-3xl font-extrabold tracking-tight text-gray-900">
+              {product.name}
+            </h1>
 
             <div className="mt-3">
               <h2 className="sr-only">Elämyksen tiedot</h2>
@@ -67,7 +77,7 @@ export default ({product, title, description}: {product: Product, title: string,
                 Tilaa lahjakortti
               </button> */}
             </div>
-            
+
             <Tab.Group as="div" className="flex flex-col-reverse">
               <div className="hidden mt-6 w-full max-w-2xl mx-auto sm:block lg:max-w-none">
                 <Tab.List className="grid grid-cols-4 gap-6">
@@ -80,12 +90,16 @@ export default ({product, title, description}: {product: Product, title: string,
                         <>
                           <span className="sr-only">{image.name}</span>
                           <span className="absolute inset-0 rounded-md overflow-hidden">
-                            <img src={image.src} alt="" className="w-full h-full object-center object-cover" />
+                            <img
+                              src={image.src}
+                              alt=""
+                              className="w-full h-full object-center object-cover"
+                            />
                           </span>
                           <span
                             className={classNames(
-                              selected ? 'ring-orange' : 'ring-transparent',
-                              'absolute inset-0 rounded-md ring-2 ring-offset-2 pointer-events-none'
+                              selected ? "ring-orange" : "ring-transparent",
+                              "absolute inset-0 rounded-md ring-2 ring-offset-2 pointer-events-none"
                             )}
                             aria-hidden="true"
                           />
@@ -111,7 +125,6 @@ export default ({product, title, description}: {product: Product, title: string,
           </div>
 
           <div className="mt-10 px-4 sm:px-0 sm:mt-16 lg:mt-0">
-
             <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
               {product.features.map((feature) => (
                 <div key={feature.name} className="pt-6">
@@ -119,18 +132,25 @@ export default ({product, title, description}: {product: Product, title: string,
                     <div className="-mt-6">
                       <div>
                         <span className="inline-flex items-center justify-center rounded-md bg-yellow p-3 shadow-lg">
-                          <feature.icon className="h-6 w-6 text-black" aria-hidden="true" />
+                          <feature.icon
+                            className="h-6 w-6 text-black"
+                            aria-hidden="true"
+                          />
                         </span>
                       </div>
-                      <h3 className="mt-8 text-lg font-medium tracking-tight text-gray-900">{feature.name}</h3>
-                      <p className="mt-5 text-base text-gray-500">{feature.description}</p>
+                      <h3 className="mt-8 text-lg font-medium tracking-tight text-gray-900">
+                        {feature.name}
+                      </h3>
+                      <p className="mt-5 text-base text-gray-500">
+                        {feature.description}
+                      </p>
                     </div>
                   </div>
                 </div>
               ))}
             </div>
 
-            { product.details.length > 0 &&
+            {product.details.length > 0 && (
               <section aria-labelledby="details-heading" className="mt-12">
                 <h2 id="details-heading" className="sr-only">
                   Lisätiedot
@@ -144,7 +164,9 @@ export default ({product, title, description}: {product: Product, title: string,
                           <h3>
                             <Disclosure.Button className="group relative w-full py-6 flex justify-between items-center text-left">
                               <span
-                                className={classNames('text-orange text-sm font-medium')}
+                                className={classNames(
+                                  "text-orange text-sm font-medium"
+                                )}
                               >
                                 {detail.name}
                               </span>
@@ -163,7 +185,10 @@ export default ({product, title, description}: {product: Product, title: string,
                               </span>
                             </Disclosure.Button>
                           </h3>
-                          <Disclosure.Panel as="div" className="pb-6 prose prose-sm text-sm">
+                          <Disclosure.Panel
+                            as="div"
+                            className="pb-6 prose prose-sm text-sm"
+                          >
                             <ul role="list">
                               {detail.items.map((item: any) => (
                                 <li key={item}>{item}</li>
@@ -176,9 +201,10 @@ export default ({product, title, description}: {product: Product, title: string,
                   ))}
                 </div>
               </section>
-            }
+            )}
           </div>
         </div>
       </div>
     </div>
   </Layout>
+);

@@ -9,8 +9,8 @@ import {
   faInstagramSquare,
 } from "@fortawesome/free-brands-svg-icons";
 import Head from "next/head";
-import Footer from '../components/Footer'
-import Header from '../components/Header'
+import Footer from "../components/Footer";
+import Header from "../components/Header";
 
 type Props = {
   children?: ReactNode;

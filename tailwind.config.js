@@ -1,18 +1,15 @@
 const colors = require("tailwindcss/colors");
-const defaultTheme = require('tailwindcss/defaultTheme');
+const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
-  content: [
-    './pages/**/*.{html,ts,tsx}',
-    './components/**/*.{html,ts,tsx}',
-  ],
+  content: ["./pages/**/*.{html,ts,tsx}", "./components/**/*.{html,ts,tsx}"],
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+        sans: ["Inter var", ...defaultTheme.fontFamily.sans],
       },
       gridTemplateRows: {
-        '[auto,auto,1fr]': 'auto auto 1fr',
+        "[auto,auto,1fr]": "auto auto 1fr",
       },
     },
     colors: {
@@ -26,8 +23,8 @@ module.exports = {
     },
   },
   plugins: [
-    require('@tailwindcss/aspect-ratio'),
-    require('@tailwindcss/forms'),
-    require('@tailwindcss/typography'),
+    require("@tailwindcss/aspect-ratio"),
+    require("@tailwindcss/forms"),
+    require("@tailwindcss/typography"),
   ],
 };

@@ -1,5 +1,5 @@
 import base64 from "base64-url";
-import dayjs from "dayjs"
+import dayjs from "dayjs";
 import { google } from "googleapis";
 import { NextApiRequest, NextApiResponse } from "next";
 
@@ -29,23 +29,23 @@ interface NewsLetterData {
 
 interface BookingRequestData {
   type: "booking";
-  content: BookingData
+  content: BookingData;
 }
 
 interface ContactRequestData {
   type: "contact";
-  content: ContactData
+  content: ContactData;
 }
 
 interface NewsLetterRequestData {
   type: "newsletter";
-  content: NewsLetterData
+  content: NewsLetterData;
 }
 
 const createBookingEmailContent = (data: BookingData) => {
   const dateTime = dayjs(data.date).format("D.M.YYYY") + " klo " + data.time;
 
-  return ([
+  return [
     "Content-Type: text/plain; charset=utf-8\n",
     "MIME-Version: 1.0\n",
     "Content-Transfer-Encoding: 7bit\n",
@@ -53,7 +53,12 @@ const createBookingEmailContent = (data: BookingData) => {
     "Sender: Huvimestari <toni@huvimestari.fi>\n",
     "From: " + data.email + "\n",
     "Reply-To: " + data.email + "\n",
-    "Subject: =?utf-8?B?" + base64.encode("Huvimestari, varauspyyntö: " + data.activity + " / " + dateTime) + "?=" + "\n\n",
+    "Subject: =?utf-8?B?" +
+      base64.encode(
+        "Huvimestari, varauspyyntö: " + data.activity + " / " + dateTime
+      ) +
+      "?=" +
+      "\n\n",
     "Varauspyynnön tiedot:\n",
     "Elämys: " + data.activity + "\n",
     "Ajankohta: " + dateTime + "\n",
@@ -61,11 +66,12 @@ const createBookingEmailContent = (data: BookingData) => {
     "Varaajan nimi: " + data.name + "\n",
     "Sähköpostiosoite: " + data.email + "\n",
     "Puhelinnumero: " + data.phone + "\n",
-    "Huomioitavaa: " + (data.note ? data.note : "")
-    ].join(""));
-}
+    "Huomioitavaa: " + (data.note ? data.note : ""),
+  ].join("");
+};
 
-const createContactEmailContent = (data: ContactData) => ([
+const createContactEmailContent = (data: ContactData) =>
+  [
     "Content-Type: text/plain; charset=utf-8\n",
     "MIME-Version: 1.0\n",
     "Content-Transfer-Encoding: 7bit\n",
@@ -76,10 +82,11 @@ const createContactEmailContent = (data: ContactData) => ([
     "Subject: Huvimestari, viesti verkkosivuilta\n\n",
     "Sähköpostiosoite: " + (data.email || "-") + "\n",
     "Puhelinnumero: " + (data.phone || "-") + "\n",
-    "Viesti: \n" + (data.message || "-")
-    ].join(""));
+    "Viesti: \n" + (data.message || "-"),
+  ].join("");
 
-const createNewsLetterEmailContent = (data: NewsLetterData) => ([
+const createNewsLetterEmailContent = (data: NewsLetterData) =>
+  [
     "Content-Type: text/plain; charset=utf-8\n",
     "MIME-Version: 1.0\n",
     "Content-Transfer-Encoding: 7bit\n",
@@ -89,7 +96,7 @@ const createNewsLetterEmailContent = (data: NewsLetterData) => ([
     "Reply-To: " + data.email + "\n",
     "Subject: Huvimestari, liity postituslistalle\n\n",
     "Sähköpostiosoite: " + (data.email || "-") + "\n",
-    ].join(""));
+  ].join("");
 
 const sendEmail = async (content: string) => {
   const gmail = google.gmail("v1");
@@ -99,35 +106,42 @@ const sendEmail = async (content: string) => {
     undefined,
     process.env.GMAIL_PRIVATE_KEY,
     [GMAIL_API_URL],
-    EMAIL_ADDRESS);
-  
-  await jwtClientGmail.authorize((err: Error | null) => err && console.error(err));
+    EMAIL_ADDRESS
+  );
+
+  await jwtClientGmail.authorize(
+    (err: Error | null) => err && console.error(err)
+  );
 
   return gmail.users.messages.send({
     auth: jwtClientGmail,
     userId: EMAIL_ADDRESS,
-    requestBody: { raw: safe }
+    requestBody: { raw: safe },
   });
-}
+};
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  const data: BookingRequestData | ContactRequestData | NewsLetterRequestData = req.body;
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
+  const data: BookingRequestData | ContactRequestData | NewsLetterRequestData =
+    req.body;
   let success = false;
 
   switch (data.type) {
     case "booking":
       await sendEmail(createBookingEmailContent(data.content)).then(() => {
-        success = true
+        success = true;
       });
       break;
     case "contact":
       await sendEmail(createContactEmailContent(data.content)).then(() => {
-        success = true
+        success = true;
       });
       break;
     case "newsletter":
       await sendEmail(createNewsLetterEmailContent(data.content)).then(() => {
-        success = true
+        success = true;
       });
       break;
     default:

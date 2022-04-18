@@ -1,37 +1,41 @@
 const products = [
   {
     id: 1,
-    name: 'Köysilaskeutuminen',
-    href: '/koysilaskeutuminen',
-    intro: 'Köysilaskeutuminen on ehdoton suosikki, jos haluat ihastella Jyväskylän komeimpia maisemia 55 metrin korkeudesta Matti Nykäsen mäkihyppytornista. ',
-    imageSrc: 'https://huvimestari.fi/img/koysilaskeutuminen_small.jpg',
-    imageAlt: 'Köysilaskeutuminen mäkihyppytornista',
+    name: "Köysilaskeutuminen",
+    href: "/koysilaskeutuminen",
+    intro:
+      "Köysilaskeutuminen on ehdoton suosikki, jos haluat ihastella Jyväskylän komeimpia maisemia 55 metrin korkeudesta Matti Nykäsen mäkihyppytornista. ",
+    imageSrc: "https://huvimestari.fi/img/koysilaskeutuminen_small.jpg",
+    imageAlt: "Köysilaskeutuminen mäkihyppytornista",
   },
   {
     id: 2,
-    name: 'Siltakeinu',
-    href: '/siltakeinu',
-    intro: 'Siltakeinu on valtava sillan rakenteisiin viritetty kiikku, jonka vauhdikkaaseen kyytiin pääset hyppäämään Tourujoen ylittävällä Kinakujan sillalla.',
-    imageSrc: 'https://huvimestari.fi/img/siltakeinu_small.jpg',
-    imageAlt: 'Siltakeinu Kinakujan sillalla',
+    name: "Siltakeinu",
+    href: "/siltakeinu",
+    intro:
+      "Siltakeinu on valtava sillan rakenteisiin viritetty kiikku, jonka vauhdikkaaseen kyytiin pääset hyppäämään Tourujoen ylittävällä Kinakujan sillalla.",
+    imageSrc: "https://huvimestari.fi/img/siltakeinu_small.jpg",
+    imageAlt: "Siltakeinu Kinakujan sillalla",
   },
   {
     id: 3,
-    name: 'Kalliokiipeily',
-    href: '/kalliokiipeily',
-    intro: 'Kalliokiipeily on mainio laji, jossa voit haastaa omia rajojasi luonnon helmassa kalliota halaillen. Köysikiipeily sopii jokaiselle ihan aloittelijoista alkaen.',
-    imageSrc: 'https://huvimestari.fi/img/kalliokiipeily_small.jpg',
-    imageAlt: 'Kalliokiipeily luonnon kalliolla',
+    name: "Kalliokiipeily",
+    href: "/kalliokiipeily",
+    intro:
+      "Kalliokiipeily on mainio laji, jossa voit haastaa omia rajojasi luonnon helmassa kalliota halaillen. Köysikiipeily sopii jokaiselle ihan aloittelijoista alkaen.",
+    imageSrc: "https://huvimestari.fi/img/kalliokiipeily_small.jpg",
+    imageAlt: "Kalliokiipeily luonnon kalliolla",
   },
   {
     id: 4,
-    name: 'Jääkiipeily',
-    href: '/jaakiipeily',
-    intro: 'Jääkiipeily on harvinaista herkkua Keski-Suomen leveyksillä. Aidoilla luonnon jääputouksilla saat kokeilla, miltä tuntuu kiivetä jääraudoilla ja -hakuilla.',
-    imageSrc: 'https://huvimestari.fi/img/jaakiipeily_small.jpg',
-    imageAlt: 'Jääkiipeily luonnon jääputouksilla',
+    name: "Jääkiipeily",
+    href: "/jaakiipeily",
+    intro:
+      "Jääkiipeily on harvinaista herkkua Keski-Suomen leveyksillä. Aidoilla luonnon jääputouksilla saat kokeilla, miltä tuntuu kiivetä jääraudoilla ja -hakuilla.",
+    imageSrc: "https://huvimestari.fi/img/jaakiipeily_small.jpg",
+    imageAlt: "Jääkiipeily luonnon jääputouksilla",
   },
-]
+];
 
 export default function Services() {
   return (
@@ -50,11 +54,13 @@ export default function Services() {
                 />
               </div>
               <h3 className="mt-4 text-2xl text-orange">{product.name}</h3>
-              <p className="mt-1 text-base font-medium text-gray-700">{product.intro}</p>
+              <p className="mt-1 text-base font-medium text-gray-700">
+                {product.intro}
+              </p>
             </a>
           ))}
         </div>
       </div>
     </div>
-  )
+  );
 }
