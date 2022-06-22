@@ -151,6 +151,12 @@ export default function Header() {
               Varauskalenteri
             </a>
             <a
+              href="/tapahtumakalenteri"
+              className="text-base font-medium text-gray-700 hover:text-orange"
+            >
+              Tapahtumakalenteri
+            </a>
+            <a
               href="/ukk"
               className="text-base font-medium text-gray-700 hover:text-orange"
             >
@@ -229,6 +235,12 @@ export default function Header() {
                   className="text-base font-medium text-orange hover:text-orange"
                 >
                   Varauskalenteri
+                </a>
+                <a
+                  href="/tapahtumakalenteri"
+                  className="text-base font-medium text-orange hover:text-orange"
+                >
+                  Tapahtumakalenteri
                 </a>
                 <a
                   href="/ukk"
