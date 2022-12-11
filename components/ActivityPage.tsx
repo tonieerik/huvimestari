@@ -18,6 +18,8 @@ interface Feature {
 interface Product {
   name: string;
   price: string;
+  ctaText: string;
+  ctaLink?: string;
   heroImage: string;
   images: Image[];
   description: string;
@@ -60,15 +62,16 @@ export default ({
               />
             </div>
 
-            <div className="my-10 flex sm:flex-col1">
+            <div className="mt-10 flex sm:flex-col1">
               <button
+                disabled={!product.ctaLink}
                 onClick={() => {
-                  window.location.href = "/varaa";
+                  window.location.href = product.ctaLink || "";
                 }}
                 type="submit"
                 className="mx-2 max-w-xs flex-1 bg-orange border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:text-black focus:outline-none sm:w-full"
               >
-                Varaa aikasi
+                {product.ctaText}
               </button>
               {/* <button
                 type="submit"
@@ -78,7 +81,7 @@ export default ({
               </button> */}
             </div>
 
-            <Tab.Group as="div" className="flex flex-col-reverse">
+            <Tab.Group as="div" className="mt-10 flex flex-col-reverse">
               <div className="hidden mt-6 w-full max-w-2xl mx-auto sm:block lg:max-w-none">
                 <Tab.List className="grid grid-cols-4 gap-6">
                   {product.images.map((image) => (

@@ -45,7 +45,11 @@ function MyApp({ Component, pageProps }: AppProps) {
         style={{ color: "#333333", background: "rgba(255, 236, 68, 0.9)" }}
       >
         Meidänkin sivustomme käyttää evästeitä. Käyttämällä sivustoa hyväksyt
-        tämän. Kelaa alaspäin ja tämä banneri katoaa.
+        tämän. Kelaa alaspäin ja tämä banneri katoaa. Halutessasi voit tutustua{" "}
+        <a href="/tietosuojaseloste" className="underline">
+          tietosuojaselosteeseemme
+        </a>
+        .
       </CookieConsent>
     </>
   );

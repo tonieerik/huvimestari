@@ -12,14 +12,14 @@ const services = [
     buttonUrl: "/varaa",
   },
   {
-    title: "Pendulum",
+    title: "Pendulum (currently unavailable)",
     price: "100 €",
     description:
       "The pendulum on the Kinakuja bridge is our second most popular activity. A pendulum is a giant swing tied to the structures of a bridge onto which a harnessed person jumps. Even though the bridge is relatively small, it gives a positive surprise – to some already when climbing over the rail. Compared to a bungee jump, the bridge swing ride is softer, which many customers have commended.",
     imageSrc: "https://huvimestari.fi/img/siltakeinu_screenshot_1.jpg",
     imageAlt: "Pendulum on Kinakuja bridge",
-    buttonText: "Book Now",
-    buttonUrl: "/varaa",
+    buttonText: "Currently unavailable",
+    buttonUrl: "",
   },
   {
     title: "Rock Climbing",

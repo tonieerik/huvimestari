@@ -9,6 +9,8 @@ import ActivityPage from "../components/ActivityPage";
 const product = {
   name: "Jääkiipeily",
   price: "Tilausryhmät alkaen 275 €",
+  ctaText: "Varaa aikasi",
+  ctaLink: "/yhteystiedot",
   heroImage: "https://huvimestari.fi/img/jaakiipeily.jpg",
   images: [
     {

@@ -104,7 +104,7 @@ const sendEmail = async (content: string) => {
   const jwtClientGmail = new google.auth.JWT(
     process.env.GMAIL_EMAIL,
     undefined,
-    process.env.GMAIL_PRIVATE_KEY,
+    process.env.GMAIL_PRIVATE_KEY?.replaceAll(`"`, ``).replaceAll(`\\n`, `\n`),
     [GMAIL_API_URL],
     EMAIL_ADDRESS
   );

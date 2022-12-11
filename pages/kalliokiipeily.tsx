@@ -9,6 +9,8 @@ import ActivityPage from "../components/ActivityPage";
 const product = {
   name: "Kalliokiipeily",
   price: "Tilausryhmät alkaen 200 €",
+  ctaText: "Varaa aikasi",
+  ctaLink: "/yhteystiedot",
   heroImage: "https://huvimestari.fi/img/kalliokiipeily.jpg",
   images: [
     {
@@ -39,7 +41,7 @@ const product = {
     {
       name: "Lisätiedot",
       items: [
-        "Voimme myös järjestää kysynnän mukaan köysitekniikkakursseja geokätköilijöille ja muille seikkailullisemmille luonnossa liikkujille. Kerää oma porukka tai seuraa tapahtumakalenteriamme ja Facebookia.",
+        "Voimme myös järjestää kysynnän mukaan köysitekniikkakursseja geokätköilijöille ja muille seikkailullisemmille luonnossa liikkujille. Kerää oma porukka tai seuraa Facebookia.",
       ],
     },
   ],

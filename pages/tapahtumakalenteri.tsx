@@ -12,37 +12,47 @@ const seo = {
     "Järjestämme sesonkiaikoihin tapahtumia, joihin pääset edullisesti ilman ryhmää.",
 };
 
-const events = [
-  {
-    date: "sunnuntai 3.7.2022",
-    time: "13.30 - 16.00",
-    price: "40 € / laskeutuja (GoPro-video 5 € lisämaksusta)",
-    event: "Köysilaskeutuminen mäkihyppytornista",
-    description:
-      "Koe ikimuistoinen 55 metriä korkea köysilaskeutuminen legendaarisesta Matti Nykäsen hyppyrimäestä. Tapahtuma täytetään varausjärjestyksessä. Ilmoittaudu viestillä 0400 627 010 tai toni@huvimestari.fi - saat paluuviestissä maksulinkin, jolla voit maksaa osallistumisesi etukäteen.",
-    icon: "https://huvimestari.fi/img/koysilaskeutuminen_small.jpg",
-    location: "Laajavuori, Jyväskylä",
-  },
-  {
-    date: "torstai 7.7.2022",
-    time: "18.00 - 21.00",
-    price: "40 € / keinuja (GoPro-video 5 € lisämaksusta)",
-    event: "Siltakeinu Kuokkalan sillalla",
-    description:
-      "Tule hyppäämään hurjan siltakeinun kyytiin Jyväskylän suurimmalta sillalta! Ikäraja 16 vuotta. Tapahtuma täytetään varausjärjestyksessä. Ilmoittaudu viestillä 0400 627 010 tai toni@huvimestari.fi - saat paluuviestissä maksulinkin, jolla voit maksaa osallistumisesi etukäteen.",
-    icon: "https://huvimestari.fi/img/siltakeinu_small.jpg",
-    location: "Kuokkalan silta, Jyväskylä",
-  },
-  {
-    date: "sunnuntai 17.7.2022",
-    time: "15.00 - 18.00",
-    price: "40 € / kiipeilijä",
-    event: "Kalliokiipeilykokeilu",
-    description:
-      "Tule kokeilemaan kalliokiipeilyä kokeneen ohjaajan opastamana. Sopii niin ensikertalaisille kuin aiemmin kiivenneille. Tapahtuma täytetään varausjärjestyksessä. Ilmoittaudu viestillä 0400 627 010 tai toni@huvimestari.fi - saat paluuviestissä maksulinkin, jolla voit maksaa osallistumisesi etukäteen.",
-    icon: "https://huvimestari.fi/img/kalliokiipeily_small.jpg",
-    location: "Patamankallio, Hirvaskangas",
-  },
+interface Event {
+  date: string;
+  time: string;
+  price: string;
+  event: string;
+  description: string;
+  icon: string;
+  location: string;
+}
+
+const events: Event[] = [
+  // {
+  //   date: "sunnuntai 3.7.2022",
+  //   time: "13.30 - 16.00",
+  //   price: "40 € / laskeutuja (GoPro-video 5 € lisämaksusta)",
+  //   event: "Köysilaskeutuminen mäkihyppytornista",
+  //   description:
+  //     "Koe ikimuistoinen 55 metriä korkea köysilaskeutuminen legendaarisesta Matti Nykäsen hyppyrimäestä. Tapahtuma täytetään varausjärjestyksessä. Ilmoittaudu viestillä 0400 627 010 tai toni@huvimestari.fi - saat paluuviestissä maksulinkin, jolla voit maksaa osallistumisesi etukäteen.",
+  //   icon: "https://huvimestari.fi/img/koysilaskeutuminen_small.jpg",
+  //   location: "Laajavuori, Jyväskylä",
+  // },
+  // {
+  //   date: "torstai 7.7.2022",
+  //   time: "18.00 - 21.00",
+  //   price: "40 € / keinuja (GoPro-video 5 € lisämaksusta)",
+  //   event: "Siltakeinu Kuokkalan sillalla",
+  //   description:
+  //     "Tule hyppäämään hurjan siltakeinun kyytiin Jyväskylän suurimmalta sillalta! Ikäraja 16 vuotta. Tapahtuma täytetään varausjärjestyksessä. Ilmoittaudu viestillä 0400 627 010 tai toni@huvimestari.fi - saat paluuviestissä maksulinkin, jolla voit maksaa osallistumisesi etukäteen.",
+  //   icon: "https://huvimestari.fi/img/siltakeinu_small.jpg",
+  //   location: "Kuokkalan silta, Jyväskylä",
+  // },
+  // {
+  //   date: "sunnuntai 17.7.2022",
+  //   time: "15.00 - 18.00",
+  //   price: "40 € / kiipeilijä",
+  //   event: "Kalliokiipeilykokeilu",
+  //   description:
+  //     "Tule kokeilemaan kalliokiipeilyä kokeneen ohjaajan opastamana. Sopii niin ensikertalaisille kuin aiemmin kiivenneille. Tapahtuma täytetään varausjärjestyksessä. Ilmoittaudu viestillä 0400 627 010 tai toni@huvimestari.fi - saat paluuviestissä maksulinkin, jolla voit maksaa osallistumisesi etukäteen.",
+  //   icon: "https://huvimestari.fi/img/kalliokiipeily_small.jpg",
+  //   location: "Patamankallio, Hirvaskangas",
+  // },
 ];
 
 const CalendarPage = () => (
@@ -53,6 +63,9 @@ const CalendarPage = () => (
           Tulevat tapahtumat
         </h1>
         <ol className="mt-4 divide-y divide-gray-100 text-sm leading-6 lg:col-span-7 xl:col-span-8">
+          {!events.length && (
+            <div className="m-4">Ei kalenteroituja tapahtumia.</div>
+          )}
           {events.map((event) => (
             <li
               key={event.date}

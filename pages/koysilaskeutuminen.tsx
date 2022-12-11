@@ -9,6 +9,8 @@ import ActivityPage from "../components/ActivityPage";
 const product = {
   name: "Köysilaskeutuminen",
   price: "Tilausryhmät alkaen 150 €",
+  ctaText: "Varaa aikasi",
+  ctaLink: "/varaa",
   heroImage: "https://huvimestari.fi/img/koysilaskeutuminen.jpg",
   images: [
     {

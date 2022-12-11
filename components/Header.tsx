@@ -19,8 +19,9 @@ const services = [
     icon: SparklesIcon,
   },
   {
-    name: "Siltakeinu",
-    description: "Kinakujan sillalta keskustan kupeessa",
+    name: "Siltakeinu (tauolla)",
+    // description: "Kinakujan sillalta keskustan kupeessa",
+    description: "Toistaiseksi ei saatavilla",
     href: "/siltakeinu",
     icon: SparklesIcon,
   },
@@ -150,12 +151,12 @@ export default function Header() {
             >
               Varauskalenteri
             </a>
-            <a
+            {/* <a
               href="/tapahtumakalenteri"
               className="text-base font-medium text-gray-700 hover:text-orange"
             >
               Tapahtumakalenteri
-            </a>
+            </a> */}
             <a
               href="/ukk"
               className="text-base font-medium text-gray-700 hover:text-orange"
@@ -236,12 +237,12 @@ export default function Header() {
                 >
                   Varauskalenteri
                 </a>
-                <a
+                {/* <a
                   href="/tapahtumakalenteri"
                   className="text-base font-medium text-orange hover:text-orange"
                 >
                   Tapahtumakalenteri
-                </a>
+                </a> */}
                 <a
                   href="/ukk"
                   className="text-base font-medium text-orange hover:text-orange"

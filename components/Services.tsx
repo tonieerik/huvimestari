@@ -10,7 +10,7 @@ const products = [
   },
   {
     id: 2,
-    name: "Siltakeinu",
+    name: "Siltakeinu (tauolla)",
     href: "/siltakeinu",
     intro:
       "Siltakeinu on valtava sillan rakenteisiin viritetty kiikku, jonka vauhdikkaaseen kyytiin pääset hyppäämään Tourujoen ylittävällä Kinakujan sillalla.",

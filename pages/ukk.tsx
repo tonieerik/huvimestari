@@ -5,11 +5,6 @@ import Layout from "../components/Layout";
 
 const faqs = [
   {
-    question: "Rajoittaako koronavirus toimintaanne?",
-    answer:
-      "Koronavirus ei käytännössä vaikuta toimintaamme. Olemme pieni toimija, eikä tapahtumissamme liiku massoja. Tilausryhmän jäsenetkin tuntevat tyypillisesti toisensa jo ennakkoon. Noudatamme maskisuositusta, suosimme pienryhmiä ja toteutamme muutenkin kaikki aktiviteetit ulkosalla. Seuraamme valtakunnallisia ohjeistuksia ja rajoituksia. Toivottavasti pian taas palaamme rajoitteettomaan elämään kaikin puolin.",
-  },
-  {
     question: "Voinko ostaa lahjakortin elämyksiinne?",
     answer:
       "Kyllä, voit tilata lahjakortin suoraan verkkosivuiltamme. Tarvittaessa voit myös tiedustella asiaa sähköpostitse. Saat lahjakortin ja laskun sähköpostiisi. Voit hankkia lahjakortin joko suoraan tiettyyn aktiviteettiin tai vapaavalintaisella summalla. Yleisiin tapahtumiin otamme vain suoria ilmoittautumisia.",
@@ -30,6 +25,11 @@ const faqs = [
       "Köysilaskeutuminen ja siltakeinu eivät vaadi käytännössä lainkaan fyysistä suorittamista. Myös kallio- ja jääkiipeilykokeiluissa pärjää lähes kuka vain normaalikuntoinen. Kiipeilytykset toteutamme aina osallistujien tason mukaan. Tarjolla on aina vähintään yksi helppo/helpohko kiipeilylinja, ja pyrimme löytämään myös lisähaastetta jo aiemmin kiipeilyä harrastaneille. Jos osallistujalla on liikuntarajoitteita, mietimme etukäteen, miten aktiviteetin voi järjestää. Haluamme palvella asiakkaitamme yksilöllisesti ja ennakkoluulottomasti. Köysiaktiviteeteissamme ei ole ehdottomia painorajoja. Tärkeintä kuitenkin on, että valjaat saadaan puettua tukevasti osallistujan päälle. Tarvittaessa voimme keskustella tästä etukäteen, ettei rajoitetta huomattaisi vasta paikan päällä.",
   },
   {
+    question: "Rajoittaako koronavirus toimintaanne?",
+    answer:
+      "Koronavirus ei käytännössä vaikuta toimintaamme. Olemme pieni toimija, eikä tapahtumissamme liiku massoja. Tilausryhmän jäsenetkin tuntevat tyypillisesti toisensa jo ennakkoon. Noudatamme maskisuositusta, suosimme pienryhmiä ja toteutamme muutenkin kaikki aktiviteetit ulkosalla.",
+  },
+  {
     question: "Onko elämyksille ikärajaa?",
     answer:
       "Siltakeinun ikäraja on 16 vuotta. Myös muihin köysielämyksiin suosittelemme 16 vuoden ikää. Toki jos uskallusta riittää, muihin kuin siltakeinuun voi osallistua myös nuorempana. Kalliokiipeilykokeilussa ei ole käytännössä lainkaan ikärajaa, koska se luonnistuu ihan lapsiltakin. Jääkiipeilyssä taas fyysinen voima voi tulla lapsille kynnyskysymykseksi. Alle 18-vuotiailta haluamme vanhemman suostumuksen kirjallisena. Jos osallistuja on alaikäinen, keskustelemme asiasta mielellään etukäteen.",
@@ -42,7 +42,7 @@ const faqs = [
   {
     question: "Järjestättekö elämyksiä ympäri vuoden?",
     answer:
-      "Kyllä, köydet ja muut turvavälineet kestävät Suomen vaihtelevat keliolosuhteet erinomaisesti. Köysilaskeutuminen ja siltakeinu onnistuvat jokaisena vuodenaikana. Kalliokiipeily ei luonnollisestikaan onnistu talvella eikä jääkiipeily muulloin kuin talvella sopivissa jääolosuhteissa. Keväällä ja syksyllä kalliokiipeily on mahdollista, jos keliolot sen sallivat.",
+      "Vuonna 2023 aloitamme kiireiden vuoksi kauden vasta toukokuussa aktiivisimman sesongin alkaessa. Köydet ja muut turvavälineet kestävät Suomen vaihtelevat keliolosuhteet erinomaisesti myös talvella. Köysilaskeutuminen ja siltakeinu onnistuvat jokaisena vuodenaikana. Kalliokiipeily ei luonnollisestikaan onnistu talvella eikä jääkiipeily muulloin kuin talvella sopivissa jääolosuhteissa. Keväällä ja syksyllä kalliokiipeily on mahdollista, jos keliolot sen sallivat.",
   },
   {
     question: "Miten aktiviteetteihin tulee pukeutua / varustautua?",

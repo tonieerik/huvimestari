@@ -58,11 +58,11 @@ export default function ContactInfo() {
                 Ota yhteyttä
               </h2>
               <p className="mt-3 text-lg leading-6 text-gray-700">
-                Heitä viestiä tai soita, jos joku asia jäi vielä askarruttamaan
+                Heitä viestiä, jos joku asia jäi vielä askarruttamaan
                 tutustuttuasi verkkosivuihimme.
               </p>
               <dl className="mt-8 text-base text-gray-700">
-                <div className="mt-6">
+                {/* <div className="mt-6">
                   <dt className="sr-only">Puhelinnumero</dt>
                   <dd className="flex">
                     <PhoneIcon
@@ -73,7 +73,7 @@ export default function ContactInfo() {
                       <a href="tel:+358400627010">0400 627 010</a>
                     </span>
                   </dd>
-                </div>
+                </div> */}
                 <div className="mt-3">
                   <dt className="sr-only">Sähköpostiosoite</dt>
                   <dd className="flex">
@@ -170,7 +170,7 @@ export default function ContactInfo() {
                       : loading
                       ? "Lähetetään "
                       : "Lähetä viesti"}{" "}
-                    <PulseLoader loading={loading} color="white" size="5" />
+                    <PulseLoader loading={loading} color="white" size={5} />
                   </button>
                 </div>
               </form>

@@ -7,8 +7,10 @@ import {
 import ActivityPage from "../components/ActivityPage";
 
 const product = {
-  name: "Siltakeinu",
+  name: "Siltakeinu (tauolla)",
   price: "Tilausryhmät alkaen 100 €",
+  ctaText: "Toistaiseksi ei saatavilla",
+  ctaLink: undefined,
   heroImage: "https://huvimestari.fi/img/siltakeinu.jpg",
   images: [
     {
@@ -35,7 +37,6 @@ const product = {
     <p>Esimerkiksi benjihyppyyn verrattuna siltakeinun vauhdikas kyyti on verrattain pehmeä, mitä monet asiakkaamme ovat kiitelleet. Hetkellinen vapaapudotus ottaa kuitenkin taatusti mahanpohjasta ja saa hetkellisen hirvityksen tunteen laukeamaan nauruna.</p>
     <p>Kinakujan silta sijaitsee muutaman sadan metrin päässä Jyväskylän keskustan ytimestä.</p>
   `,
-  // <p>Parhaiten siltakeinun idean ymmärrät videosta.</p>
   details: [
     {
       name: "Lisätiedot",
