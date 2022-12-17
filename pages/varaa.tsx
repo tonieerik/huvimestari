@@ -4,14 +4,18 @@ import {
   ChevronRightIcon,
 } from "@heroicons/react/solid";
 import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
+import timezone from "dayjs/plugin/timezone";
 import "dayjs/locale/fi";
 import { Fragment, useEffect, useState } from "react";
 import ClipLoader from "react-spinners/ClipLoader";
 import BookingForm from "../components/BookingForm";
 import Layout from "../components/Layout";
-import { ACTIVITY_RAPPELLING, ACTIVITY_PENDULUM } from "../const";
+import { ACTIVITY_RAPPELLING, ACTIVITY_PENDULUM, TIMEZONE } from "../const";
 
 dayjs.locale("fi");
+dayjs.extend(utc);
+dayjs.extend(timezone);
 
 interface Date {
   date: string;
@@ -42,7 +46,9 @@ export default function Varaa() {
   const [freeSlots, setFreeSlots] = useState<string[]>();
   const [loading, setLoading] = useState(false);
   const [maxAttendees, setMaxAttendees] = useState(0);
-  const [selectedMonth, setSelectedMonth] = useState(dayjs().date(1));
+  const [selectedMonth, setSelectedMonth] = useState(
+    dayjs().tz(TIMEZONE).date(1)
+  );
   const [submitted, setSubmitted] = useState(false);
   const [time, setTime] = useState("");
 
@@ -59,9 +65,9 @@ export default function Varaa() {
         date: d.format("YYYY-MM-DD"),
         isCurrentMonth:
           d.month() === selectedMonth.month() &&
-          d.isAfter(dayjs().add(1, "day")),
+          d.isAfter(dayjs().tz(TIMEZONE).add(1, "day")),
         isSelected: d.format("YYYY-MM-DD") === date,
-        isToday: d.isSame(dayjs(), "day"),
+        isToday: d.isSame(dayjs().tz(TIMEZONE), "day"),
       });
       d = d.add(1, "day");
     }
@@ -92,6 +98,7 @@ export default function Varaa() {
 
     for (
       let x = dayjs()
+        .tz(TIMEZONE)
         .hour(parseInt(hour))
         .minute(parseInt(min))
         .add(15, "minutes");
@@ -122,9 +129,7 @@ export default function Varaa() {
     setLoading(true);
 
     try {
-      const res = await fetch(
-        "https://gcalendar-booking.herokuapp.com/free-slots/" + date
-      );
+      const res = await fetch("/api/calendar/slots/" + date);
       const slots: Slots = JSON.parse(await res.json());
 
       setFreeSlots(
@@ -145,14 +150,14 @@ export default function Varaa() {
   };
 
   const selectDate = (date: string) => {
-    if (dayjs(date).isAfter(dayjs().add(1, "day"))) {
+    if (dayjs(date).isAfter(dayjs().tz(TIMEZONE).add(1, "day"))) {
       setDate(date);
       setTime("");
     }
   };
 
   const prevMonth = () => {
-    if (!selectedMonth.isSame(dayjs(), "month"))
+    if (!selectedMonth.isSame(dayjs().tz(TIMEZONE), "month"))
       setSelectedMonth(selectedMonth.subtract(1, "month"));
   };
 

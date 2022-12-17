@@ -1,7 +1,8 @@
 import base64 from "base64-url";
 import dayjs from "dayjs";
 import { google } from "googleapis";
-import { Booking, Contact, NewsLetter } from "types/email";
+import { Booking } from "types/calendar";
+import { Contact, NewsLetter } from "types/email";
 
 const EMAIL_ADDRESS = "toni@huvimestari.fi";
 const GMAIL_API_URL = "https://www.googleapis.com/auth/gmail.send";

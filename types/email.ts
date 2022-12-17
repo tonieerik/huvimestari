@@ -1,13 +1,4 @@
-export interface Booking {
-  activity: string;
-  attendees: number;
-  date: string;
-  email: string;
-  name: string;
-  note: string;
-  phone: string;
-  time: string;
-}
+import { Booking } from "./calendar";
 
 export interface Contact {
   email?: string;

@@ -1,18 +1,24 @@
 import { useEffect, useState } from "react";
 import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
+import timezone from "dayjs/plugin/timezone";
 import "dayjs/locale/fi";
 import PulseLoader from "react-spinners/PulseLoader";
+import { Booking } from "types/calendar";
 import {
   ACTIVITIES,
   ACTIVITY_RAPPELLING,
   ACTIVITY_PENDULUM,
   DATE_FORMAT,
   DATE_FORMAT_PRINT,
+  TIMEZONE,
 } from "../const";
 import * as ga from "../lib/ga";
 import AttendeeDropdown from "./AttendeeDropdown";
 
 dayjs.locale("fi");
+dayjs.extend(utc);
+dayjs.extend(timezone);
 
 interface BookingFormProps {
   activity: number;
@@ -75,9 +81,9 @@ const BookingForm = ({
   const onSubmit = async () => {
     setLoading(true);
 
-    const payload = {
+    const payload: { payload: Booking } = {
       payload: {
-        activity: ACTIVITIES.find((act) => act.id === activity)?.title,
+        activity: ACTIVITIES.find((act) => act.id === activity)?.title || "",
         attendees,
         date: dayjs(date).format(DATE_FORMAT),
         email,
@@ -89,18 +95,23 @@ const BookingForm = ({
     };
 
     try {
-      const res = await fetch(
-        "https://gcalendar-booking.herokuapp.com/create-booking",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(payload),
-        }
-      );
+      const resBook = await fetch("/api/calendar/book", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
 
-      if (res.status === 200) {
+      const resEmail = await fetch("/api/email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ type: "booking", content: payload.payload }),
+      });
+
+      if (resBook.status === 201 && resEmail.status === 201) {
         const price = getPrice(attendees);
 
         ga.event({
@@ -108,7 +119,7 @@ const BookingForm = ({
           params: {
             currency: "EUR",
             tax: price * 0.24,
-            transaction_id: "T_" + dayjs().unix(),
+            transaction_id: "T_" + dayjs().tz(TIMEZONE).unix(),
             value: price,
             items: [
               {
