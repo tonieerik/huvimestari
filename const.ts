@@ -11,3 +11,5 @@ export const ACTIVITIES = [
 export const DATE_FORMAT = "YYYY-MM-DD";
 export const DATE_FORMAT_DATEPICKER = "d.M.yyyy";
 export const DATE_FORMAT_PRINT = "dddd D.M.YYYY";
+
+export const TIMEZONE = "Europe/Helsinki";

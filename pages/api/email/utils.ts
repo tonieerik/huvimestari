@@ -1,48 +1,13 @@
 import base64 from "base64-url";
 import dayjs from "dayjs";
 import { google } from "googleapis";
-import { NextApiRequest, NextApiResponse } from "next";
+import { Booking } from "types/calendar";
+import { Contact, NewsLetter } from "types/email";
 
 const EMAIL_ADDRESS = "toni@huvimestari.fi";
 const GMAIL_API_URL = "https://www.googleapis.com/auth/gmail.send";
 
-interface BookingData {
-  activity: string;
-  attendees: number;
-  date: string;
-  email: string;
-  name: string;
-  note: string;
-  phone: string;
-  time: string;
-}
-
-interface ContactData {
-  email?: string;
-  message?: string;
-  phone?: string;
-}
-
-interface NewsLetterData {
-  email?: string;
-}
-
-interface BookingRequestData {
-  type: "booking";
-  content: BookingData;
-}
-
-interface ContactRequestData {
-  type: "contact";
-  content: ContactData;
-}
-
-interface NewsLetterRequestData {
-  type: "newsletter";
-  content: NewsLetterData;
-}
-
-const createBookingEmailContent = (data: BookingData) => {
+export const createBookingEmailContent = (data: Booking) => {
   const dateTime = dayjs(data.date).format("D.M.YYYY") + " klo " + data.time;
 
   return [
@@ -70,7 +35,7 @@ const createBookingEmailContent = (data: BookingData) => {
   ].join("");
 };
 
-const createContactEmailContent = (data: ContactData) =>
+export const createContactEmailContent = (data: Contact) =>
   [
     "Content-Type: text/plain; charset=utf-8\n",
     "MIME-Version: 1.0\n",
@@ -85,7 +50,7 @@ const createContactEmailContent = (data: ContactData) =>
     "Viesti: \n" + (data.message || "-"),
   ].join("");
 
-const createNewsLetterEmailContent = (data: NewsLetterData) =>
+export const createNewsLetterEmailContent = (data: NewsLetter) =>
   [
     "Content-Type: text/plain; charset=utf-8\n",
     "MIME-Version: 1.0\n",
@@ -98,7 +63,7 @@ const createNewsLetterEmailContent = (data: NewsLetterData) =>
     "Sähköpostiosoite: " + (data.email || "-") + "\n",
   ].join("");
 
-const sendEmail = async (content: string) => {
+export const sendEmail = async (content: string) => {
   const gmail = google.gmail("v1");
   const safe = base64.escape(base64.encode(content));
   const jwtClientGmail = new google.auth.JWT(
@@ -119,35 +84,3 @@ const sendEmail = async (content: string) => {
     requestBody: { raw: safe },
   });
 };
-
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
-  const data: BookingRequestData | ContactRequestData | NewsLetterRequestData =
-    req.body;
-  let success = false;
-
-  switch (data.type) {
-    case "booking":
-      await sendEmail(createBookingEmailContent(data.content)).then(() => {
-        success = true;
-      });
-      break;
-    case "contact":
-      await sendEmail(createContactEmailContent(data.content)).then(() => {
-        success = true;
-      });
-      break;
-    case "newsletter":
-      await sendEmail(createNewsLetterEmailContent(data.content)).then(() => {
-        success = true;
-      });
-      break;
-    default:
-      res.status(400).json("Invalid input");
-  }
-
-  if (success) res.status(200).json("Success");
-  else res.status(500).json("Failure");
-}

@@ -148,7 +148,7 @@ export default function Footer() {
         content: { email },
       }),
     }).then((response: any) => {
-      if (response.status === 200) {
+      if (response.status === 201) {
         setSent(true);
         setLoading(false);
         setTimeout(clearForm, 4000);
