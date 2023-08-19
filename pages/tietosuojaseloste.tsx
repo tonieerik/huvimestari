@@ -1,13 +1,11 @@
 import Layout from "../components/Layout";
-import Services from "../components/Services";
-import Testimonials from "../components/Testimonials";
 
 const seo = {
   title: "Tietosuojaseloste | Huvimestari",
   description: "Huvimestari Oy:n tietosuojaseloste",
 };
 
-const IndexPage = () => (
+const PrivacyPage = () => (
   <Layout {...seo}>
     <div className="bg-white">
       <div className="max-w-4xl mx-auto py-10 px-4 sm:py-24 sm:px-6 lg:px-8 text-sm">
@@ -238,4 +236,4 @@ const IndexPage = () => (
   </Layout>
 );
 
-export default IndexPage;
+export default PrivacyPage;
