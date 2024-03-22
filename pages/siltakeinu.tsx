@@ -9,7 +9,7 @@ import ActivityPage from "../components/ActivityPage";
 const product = {
   name: "Siltakeinu (tauolla)",
   price: "Tilausryhmät alkaen 100 €",
-  ctaText: "Toistaiseksi ei saatavilla",
+  ctaText: "Ei saatavilla kaudella 2024",
   ctaLink: undefined,
   heroImage: "https://huvimestari.fi/img/siltakeinu.jpg",
   images: [

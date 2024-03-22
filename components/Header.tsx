@@ -21,7 +21,7 @@ const services = [
   {
     name: "Siltakeinu (tauolla)",
     // description: "Kinakujan sillalta keskustan kupeessa",
-    description: "Toistaiseksi ei saatavilla",
+    description: "Ei saatavilla kaudella 2024",
     href: "/siltakeinu",
     icon: SparklesIcon,
   },

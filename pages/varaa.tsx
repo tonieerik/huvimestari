@@ -337,8 +337,7 @@ export default function Varaa() {
                       renderSlots()
                     ) : (
                       <div className="mt-2 text-sm">
-                        Pahoittelut! Siltakeinu ei ole toistaiseksi saatavilla
-                        kaudella 2023
+                        Pahoittelut! Siltakeinu ei ole saatavilla kaudella 2024
                       </div>
                     )}
                   </>
