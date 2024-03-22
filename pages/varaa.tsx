@@ -198,14 +198,14 @@ export default function Varaa() {
 
   const renderCalendar = () => (
     <div>
-      <div className="max-w-7xl h-96 mx-auto px-8 pt-10 sm:px-6">
+      {/* <div className="max-w-7xl h-96 mx-auto px-8 pt-10 sm:px-6">
         Kiitos kesästä 2023! Kaikki vapaat ajat varattiin jo hyvissä ajoin
         täyteen, joten varauskalenteri on suljettu tältä vuodelta.
         <br />
         <br />
         Palaamme taas elämysten pariin ensi vuonna!
-      </div>
-      {/* <div className="max-w-7xl mx-auto py-10 px-4 sm:py-24 sm:px-6 lg:px-8 md:grid md:grid-cols-2 md:divide-x md:divide-gray-200">
+      </div> */}
+      <div className="max-w-7xl mx-auto py-10 px-4 sm:py-24 sm:px-6 lg:px-8 md:grid md:grid-cols-2 md:divide-x md:divide-gray-200">
         <div className="md:pr-14">
           <div className="flex items-center">
             <h2 className="flex-auto font-semibold text-gray-900">
@@ -370,7 +370,7 @@ export default function Varaa() {
             </>
           )}
         </section>
-      </div> */}
+      </div>
     </div>
   );
 
