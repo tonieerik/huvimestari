@@ -14,4 +14,4 @@ Deploy the project:
 
 `$ gcloud run deploy --image gcr.io/huvimestari-fi/huvimestari-next --project huvimestari-fi --platform managed`
 
-All done. The website huvimestari.fi should be up-to-date.
+Just select the project & region, wait for the deploy and you're done. The website huvimestari.fi should be up-to-date.
