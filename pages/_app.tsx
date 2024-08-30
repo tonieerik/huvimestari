@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import CookieConsent from "react-cookie-consent";
 import { AppProps } from "next/app";
 import Head from "next/head";
 import { useRouter } from "next/router";
@@ -33,24 +32,6 @@ function MyApp({ Component, pageProps }: AppProps) {
         <Script src="https://cdn.tailwindcss.com" />
       </Head>
       <Component {...pageProps} />
-      <CookieConsent
-        acceptOnScroll
-        buttonStyle={{
-          color: "white",
-          background: "#E96D00",
-          fontSize: "13px",
-        }}
-        buttonText="Jees, tuttu juttu!"
-        flipButtons
-        style={{ color: "#333333", background: "rgba(255, 236, 68, 0.9)" }}
-      >
-        Meidänkin sivustomme käyttää evästeitä. Käyttämällä sivustoa hyväksyt
-        tämän. Kelaa alaspäin ja tämä banneri katoaa. Halutessasi voit tutustua{" "}
-        <a href="/tietosuojaseloste" className="underline">
-          tietosuojaselosteeseemme
-        </a>
-        .
-      </CookieConsent>
     </>
   );
 }
